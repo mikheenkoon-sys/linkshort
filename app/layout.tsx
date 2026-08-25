@@ -36,8 +36,28 @@ export default function RootLayout({
   return (
     <ClerkProvider
       appearance={{
-        signIn: { routing: 'modal' },
-        signUp: { routing: 'modal' }
+        signIn: { routing: "modal" },
+        signUp: { routing: "modal" },
+        variables: {
+          colorPrimary: "var(--primary)",
+          colorTextOnPrimaryBackground: "var(--primary-foreground)",
+          colorBackground: "var(--card)",
+          colorInputBackground: "var(--background)",
+          colorInputText: "var(--foreground)",
+          colorText: "var(--foreground)",
+          colorTextSecondary: "var(--muted-foreground)",
+          colorNeutral: "var(--muted)",
+          colorDanger: "var(--destructive)",
+          borderRadius: "var(--radius)",
+        },
+        elements: {
+          card: "border border-border shadow-sm",
+          footerActionLink: "text-primary hover:text-primary/80",
+          formButtonPrimary: "bg-primary text-primary-foreground hover:bg-primary/90",
+          formFieldInput: "border-input bg-background text-foreground",
+          socialButtonsBlockButton:
+            "border border-border bg-background text-foreground hover:bg-accent hover:text-accent-foreground",
+        },
       }}
       signInFallbackRedirectUrl="/dashboard"
       signUpFallbackRedirectUrl="/dashboard"
